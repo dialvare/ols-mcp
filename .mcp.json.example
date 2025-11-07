@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "openshift-lightspeed": {
+      "command": "uv",
+      "args": ["run", "python", "-m", "ols_mcp.server"],
+      "cwd": "/path/to/ols-mcp",
+      "env": {
+        "OLS_API_URL":
+"${OLS_API_URL:-https://lightspeed-service.openshift-lightspeed.svc.cluster.local}",
+        "OLS_API_TOKEN": "${OLS_API_TOKEN}",
+        "OLS_VERIFY_SSL": "${OLS_VERIFY_SSL:-true}"
+      }
+    }
+  }
+}
